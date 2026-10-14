@@ -1,0 +1,49 @@
+<Window x:Class="Ftop.App.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Ftop" Width="340" Height="480" MinWidth="150" MinHeight="150"
+        WindowStyle="None" AllowsTransparency="False" Background="Transparent"
+        ResizeMode="CanResize" ShowInTaskbar="False" Topmost="True">
+    <Window.Resources>
+        <Style x:Key="StripButton" TargetType="Button">
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Foreground" Value="#9A9AA2"/>
+            <Setter Property="FontSize" Value="11"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" CornerRadius="6" Padding="4,2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" Value="#30FFFFFF"/>
+                    <Setter Property="Foreground" Value="#F5F5F7"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Border x:Name="Panel" CornerRadius="14" Background="#5914141C" BorderBrush="#40FFFFFF" BorderThickness="1">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid x:Name="TitleStrip" Grid.Row="0" Background="Transparent"
+                  MouseLeftButtonDown="TitleStrip_MouseLeftButtonDown">
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,6,0">
+                    <Button x:Name="PinButton" Content="◉" Width="28" Height="22"
+                            Click="PinButton_Click" Style="{StaticResource StripButton}"/>
+                    <Button x:Name="CloseButton" Content="✕" Width="28" Height="22"
+                            Click="CloseButton_Click" Style="{StaticResource StripButton}"/>
+                </StackPanel>
+            </Grid>
+            <StackPanel x:Name="ModulesHost" Grid.Row="1" Margin="14,0,14,14"/>
+        </Grid>
+    </Border>
+</Window>

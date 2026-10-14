@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <ApplicationIcon></ApplicationIcon>
+    <AssemblyName>Ftop</AssemblyName>
+    <RootNamespace>Ftop.App</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Ftop.Core\Ftop.Core.csproj" />
+    <ProjectReference Include="..\Ftop.Sensors\Ftop.Sensors.csproj" />
+  </ItemGroup>
+
+</Project>
