@@ -1,3 +1,5 @@
+**中文** | [English](README.en.md)
+
 # Ftop for Windows（原型）
 
 把 [ftop](https://github.com/Nongfsq/ftop)（Nongfsq，MIT）的设计搬到 Windows 的尝试：
